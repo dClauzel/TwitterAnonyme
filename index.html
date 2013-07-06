@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Twitteranonyme by dClauzel</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Twitteranonyme</h1>
+        <p>Outil web pour tweeter anonymement via un compte banalisé</p>
+
+        <p class="view"><a href="https://github.com/dClauzel/TwitterAnonyme">View the Project on GitHub <small>dClauzel/TwitterAnonyme</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dClauzel/TwitterAnonyme/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dClauzel/TwitterAnonyme/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dClauzel/TwitterAnonyme">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="twitteranonyme" class="anchor" href="#twitteranonyme"><span class="octicon octicon-link"></span></a>TwitterAnonyme</h1>
+
+<p>Outil web pour tweeter anonymement via un compte banalisé</p>
+
+<hr><h1>
+<a name="pourquoi-le-parti-pirate-lyon-vous-propose-un-moyen-de-tweeter-anonymement-" class="anchor" href="#pourquoi-le-parti-pirate-lyon-vous-propose-un-moyen-de-tweeter-anonymement-"><span class="octicon octicon-link"></span></a>Pourquoi le Parti Pirate Lyon vous propose un moyen de tweeter anonymement ?</h1>
+
+<ol>
+<li>car nous aimons la liberté d'expression — simple, brute de décoffrage, avec tout ce qu'elle comporte ;</li>
+<li>car cela nous amuse ;</li>
+<li>car nous sommes curieux de voir ce que <em>vous</em> en ferez.</li>
+</ol><p>Voir aussi le <a href="http://PartiPirate-Lyon.fr/post/2012/08/04/Tweeter-anonymement">billet sur le blog</a> pour discuter.</p>
+
+<h1>
+<a name="comment-dployer-chez-soi-le-mme-outil-de-tweet-anonyme" class="anchor" href="#comment-dployer-chez-soi-le-mme-outil-de-tweet-anonyme"><span class="octicon octicon-link"></span></a>Comment déployer chez soi le même outil de tweet anonyme</h1>
+
+<ol>
+<li><p>Il s'agit plus d'un squelette d'outil que d'une application web clé en main ; vous avez très certainement envie de verrouiller un peu plus le formulaire PHP de traitement des données envoyées par l'utilisateur…</p></li>
+<li>
+<p>Choisir :</p>
+
+<ul>
+<li>un nom de compte Twitter (ici AnonymePPL)</li>
+<li>un site web où publier l'outil (ici <a href="http://PartiPirate-Lyon.fr/AnonymePPL/">http://PartiPirate-Lyon.fr/AnonymePPL/</a>)</li>
+</ul>
+</li>
+<li>
+<p>créer le compte Twitter (ici AnonymePPL)</p>
+
+<ul>
+<li>penser à valider l'adresse courriel de contact (ici <a href="mailto:Contact+projet-anonyme@PartiPirate-Lyon.fr">Contact+projet-anonyme@PartiPirate-Lyon.fr</a>)</li>
+<li>définir les divers réglages du compte : ne PAS protéger les tweets, profile, etc.</li>
+</ul>
+</li>
+<li>
+<p>Créer l'API du compte</p>
+
+<ul>
+<li>se connecter sur <a href="https://dev.twitter.com/">https://dev.twitter.com/</a> avec les identifiants du compte anonyme</li>
+<li>lien « Créer une application » : <a href="https://dev.twitter.com/apps/new">https://dev.twitter.com/apps/new</a>
+
+<ul>
+<li>nom : le nom de l'outil que l'on crée (ici Compte public anonyme du PPL)</li>
+<li>description : une description de l'outil que l'on crée (ici Compte Twitter anonyme proposé par le Parti Pirate Lyon)</li>
+<li>site web : le site web de l'outil que l'on crée (ici <a href="http://PartiPirate-Lyon.fr/AnonymePPL/">http://PartiPirate-Lyon.fr/AnonymePPL/</a>)</li>
+</ul>
+</li>
+</ul>
+<p>La validation du formulaire affiche la console d'administration de l'API créée.</p>
+</li>
+<li>
+<p>Paramétrer l'API du compte</p>
+
+<ul>
+<li>onglet « Réglages » :
+
+<ul>
+<li>changer le type d'application en : lecture + écriture + accès aux messages directs</li>
+<li>les informations sur l'organisation sont optionnelles :
+
+<ul>
+<li>nom de l'organisation : la personne/structure qui met à disposition l'outil que l'on crée (ici Parti Pirate Lyon)</li>
+<li>site web de l'organisation : site web du gestionnaire de l'outil que l'on crée (ici <a href="http://PartiPirate-Lyon.fr">http://PartiPirate-Lyon.fr</a>)</li>
+</ul>
+</li>
+<li>valider</li>
+</ul>
+</li>
+<li>revenir sur l'onglet « Détails », et « créer mon jeton d'accès » via le bouton idoine</li>
+</ul>
+</li>
+<li>
+<p>Récupérer les paramètres d'accès à l'API</p>
+
+<ul>
+<li>les information que nous recherchons sont désormais accessible, sur l'onglet « Détails » où nous nous trouvons déjà
+
+<ul>
+<li>Consumer key (ici <code>xxx_Consummer_key_xxx</code>)</li>
+<li>Consumer secret (ici <code>xxx_Consummer_secret_xxx</code>)</li>
+<li>Access token (ici <code>xxx_Access_token_xxx</code>)</li>
+<li>Access token secret (ici <code>xxx_Access_token_secret_xxx</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Configurer l'outil que l'on crée</p>
+
+<ul>
+<li>Dans le fichier <code>config.php</code>, définir :
+
+<ul>
+<li>CONSUMER_KEY avec <code>xxx_Consummer_key_xxx</code>
+</li>
+<li>CONSUMER_SECRET avec <code>xxx_Consummer_secret_xxx</code>
+</li>
+<li>OAUTH_TOKEN avec <code>xxx_Access_token_xxx</code>
+</li>
+<li>OAUTH_SECRET avec <code>xxx_Access_token_secret_xxx</code>
+</li>
+</ul>
+</li>
+<li>Ajuster éventuellement les fichiers :
+
+<ul>
+<li>index.html : le formulaire présenté aux utilisateurs</li>
+<li>twitter.php : le message affiché après l'envoi d'un message à tweeter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Téléverser les fichiers sur le serveur web</p></li>
+</ol><h1>
+<a name="notes-de-dveloppement" class="anchor" href="#notes-de-dveloppement"><span class="octicon octicon-link"></span></a>Notes de développement</h1>
+
+<p>L'outil travaille sans mémoire, c'est à dire que lors de l'appel du formulaire de saisie il n'a aucune idée du passé. Idéalement, il faudrait travailler avec un cache locale, mais cela implique de mettre en place une couche de persistance. Et donc se trimbaler une liaison vers une base de donnée, genre MySQL ou sqlite, ce qui alourdi considérablement le déploiement.</p>
+
+<p>Donc à chaque appel, il faut partir de zéro et regarder la situation avant d'agir; chose que nous ne faisons pas : on balance directement les demandes à Twitter et on le laisse se débrouiller avec les doublons.</p>
+
+<p>Un inconvénient est que l'outil ne peut pas supporter une grande montée en charge : en cas d'utilisation trop forte on va heurter la limite d'appels sur l'API, et l'outil sera alors inopérant durant plusieurs minutes. Il faudra alors <em>vraiment</em> mettre en place un système de cache des données avec prétraitement dessus, avant d'aller chatouiller l'API. Tout de suite, ça fait beaucoup de travail pour un simple Projet Rigolo.</p>
+
+<h1>
+<a name="licence" class="anchor" href="#licence"><span class="octicon octicon-link"></span></a>Licence</h1>
+
+<p>Le tout proposé par le <a href="http://PartiPirate-Lyon.fr" target="_blank">Parti Pirate Lyon</a>, sous licence « <a href="http://babgond.com/dotclear/post/2005/02/01/111-nouvelle-licence-public" target="_blank">Fais pas chier</a> », grâce à des bouts de code venant de différents endroits du net — lisez les sources.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dClauzel">dClauzel</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
