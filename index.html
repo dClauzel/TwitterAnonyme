@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Twitter anonymement</title>
+	<meta name="author" content="Parti Pirate Lyon">
+	<style>.mauvais {color:#cc0000; font-size:200%;}</style>
+	<script src="jquery.js"></script>
+</head>
+<body>
+
+<script>
+<!-- repris et adapté depuis http://41mag.fr/tutoriel-un-compteur-de-mots-et-de-caracteres-comme-twitter-sur-un-champ-de-formulaire-textarea-en-jquery.html -->
+$(document).ready(function(e) {
+
+	$('#message').keyup(function() {
+  
+	var nombreCaractere = $(this).val().length;
+	nombreCaractereRestant = 140 - nombreCaractere;
+    
+	var nombreMots = jQuery.trim($(this).val()).split(' ').length;
+	if($(this).val() === '') {
+		nombreMots = 0;
+	}	
+    
+	var msg = ' ' + nombreMots + ' mot(s) | ' + nombreCaractereRestant + ' caractère(s) restant';
+	$('#compteur').text(msg);
+
+	if (nombreCaractereRestant < 0) {
+		$('#compteur').addClass("mauvais");
+	} else {
+		$('#compteur').removeClass("mauvais");
+	}
+
+})  
+  
+});
+</script>
+
+<h1>Formulaire pour envoyer un tweet via le compte <a href="https://twitter.com/AnonymePPL" target=_blank>@AnonymePPL</a></h1>
+<p>Pourquoi le Parti Pirate Lyon vous propose un moyen de tweeter anonymement ?
+<ol>
+	<li>car nous aimons la liberté d'expression — simple, brute de décoffrage, avec tout ce qu'elle comporte ;
+	<li>car cela nous amuse ;
+	<li>car nous sommes curieux de voir ce que <em>vous</em> en ferez.
+</ol>
+
+<p>Voir aussi le <a href="http://PartiPirate-Lyon.fr/post/2012/08/04/Tweeter-anonymement">billet sur le blog</a> pour discuter.
+
+<hr>
+
+<p>Remarque : les URL seront automatiquement raccourcies par Twitter ; vous avez donc le droit de dépasser la taille maximale. Mais juste parce que c'est vous, hein ! ;)
+<form action="twitter.php" method=post>
+	<textarea cols=66 rows=2 id=message name=message placeholder="c'est twittable"></textarea>
+	<p id="compteur">0 mots | 140 caractères restant</p>
+	<p><input type=submit value="Twitter ça">
+</form>
+
+<hr>
+
+<h2>Sources</h2>
+<ul>
+	<li><a href="LisezMoi.txt">LisezMoi.txt</a> : la documentation développeur de l'outil
+	<li><a href="index.html">index.html</a> : cette page (duh !), qui contient le formulaire de saisie
+	<li><a href="config.phps">config.php</a> : paramètres d'authentification sur Twitter
+	<li><a href="twitter.phps">twitter.php</a> : traitement du formulaire saisi
+	<li><a href="OAuth.phps">OAuth.php</a> : gestion du protocole d'authentification OAuth
+	<li><a href="twitteroauth.phps">twitteroauth.php</a> : utilisation de OAuth pour Twitter
+	<li><a href="jquery.js">jquery.js</a> : jquery, utilisé pour l'aide à la saisie du message à tweeter
+</ul>
+<p>Le tout proposé par le <a href="http://PartiPirate-Lyon.fr" target=_blank>Parti Pirate Lyon</a>, sous licence « <a href="http://babgond.com/dotclear/post/2005/02/01/111-nouvelle-licence-public" target=_blank>Fais pas chier</a> », grâce à des bouts de code venant de différents endroits du net — lisez les sources.
+
+</body>
+</html>	
