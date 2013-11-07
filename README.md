@@ -80,4 +80,23 @@ Un inconvénient est que l'outil ne peut pas supporter une grande montée en cha
 
 
 # Licence
-Le tout proposé par le <a href="http://PartiPirate-Lyon.fr" target=_blank>Parti Pirate Lyon</a>, sous licence « <a href="http://babgond.com/dotclear/post/2005/02/01/111-nouvelle-licence-public" target=_blank>Fais pas chier</a> », grâce à des bouts de code venant de différents endroits du net — lisez les sources.
+Le tout proposé par le <a href="http://PartiPirate-Lyon.fr" target=_blank>Parti Pirate Lyon</a>, sous licence « <a href="http://babgond.com/blog/blog/2005/02/01/20050201111-nouvelle-licence-public/" target=_blank>Fais pas chier</a> », grâce à des bouts de code venant de différents endroits du net — lisez les sources.
+
+```text
+LICENCE PUBLIQUE FAIS PAS CHIER
+Version 2, Fevrier 2005
+
+Copyright (C) 2005 Beryl Gondouin
+
+Cette licence est une traduction et adaptation à la législation
+française de la licence « DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE »
+de Samuel Hocevar http://sam.zoy.org/wtfpl/.
+
+La redistribution de ce document, avec ou sans modification, est
+permise à la seule condition que le nom soit changé et que personne
+ne vienne emmerder l’auteur.
+
+LICENCE PUBLIQUE FAIS PAS CHIER
+
+0/ Vous faites absolument ce que vous voulez et vous ne faites pas chier, notamment pas l’auteur.
+```
